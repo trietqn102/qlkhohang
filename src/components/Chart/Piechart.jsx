@@ -12,6 +12,7 @@ function PieChart({ ratio }) {
     is3D: true,
     chartArea: { left: 10, top: 10, width: "90%", height: "80%" },
     legend: { position: "bottom" },
+    colors: ["#008080", "silver"],
   };
 
   return (
