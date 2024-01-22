@@ -47,14 +47,14 @@ const StoredLocation = () => {
       {
         label: "Khối lượng trong kho",
         data: totalWeightsByLocation.map((weight) => weight),
-        backgroundColor: "#FF6384",
+        backgroundColor: "#b22222",
       },
       {
         label: "Khối lượng Trống",
         data: totalWeightsByLocation.map(
           (weight) => totalWeightPerPosition - weight
         ),
-        backgroundColor: "#36A2EB",
+        backgroundColor: "#B8B7B7",
       },
     ],
   };
@@ -78,10 +78,10 @@ const StoredLocation = () => {
 
   return (
     <div>
-      <Bar data={data} options={options} />
       <h2 className="text-center my-10 text-xl font-bold">
-        Biểu đồ Cột Chồng Khối Lượng Hàng trong Kho
+      Khối Lượng Hàng trong từng vị trí trong kho
       </h2>
+      <Bar data={data} options={options} />
     </div>
   );
 };

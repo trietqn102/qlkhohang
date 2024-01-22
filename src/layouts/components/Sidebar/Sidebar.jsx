@@ -15,8 +15,20 @@ function Sidebar() {
           } flex px-10 py-6 w-full hover:bg-neutral-300/20`
         }
       >
-        Dashboard
+        Thống kế
       </NavLink>
+      
+      <NavLink
+        to={routes.dataWarehouse}
+        className={({ isActive, isPending }) =>
+          `${
+            isPending ? "pending" : isActive ? " bg-neutral-300/20" : ""
+          } flex px-10 py-6 w-full hover:bg-neutral-300/20`
+        }
+      >
+        Dữ liệu kho
+      </NavLink>
+
       <NavLink
         to={routes.export}
         className={({ isActive, isPending }) =>
@@ -27,6 +39,7 @@ function Sidebar() {
       >
         Xuất kho
       </NavLink>
+
       <NavLink
         to={routes.import}
         className={({ isActive, isPending }) =>
@@ -36,16 +49,6 @@ function Sidebar() {
         }
       >
         Nhập kho
-      </NavLink>
-      <NavLink
-        to={routes.dataWarehouse}
-        className={({ isActive, isPending }) =>
-          `${
-            isPending ? "pending" : isActive ? " bg-neutral-300/20" : ""
-          } flex px-10 py-6 w-full hover:bg-neutral-300/20`
-        }
-      >
-        Dữ liệu kho
       </NavLink>
 
       <NavLink
