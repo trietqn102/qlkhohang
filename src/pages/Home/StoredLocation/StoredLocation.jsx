@@ -9,6 +9,12 @@ const StoredLocation = () => {
     storedService
       .getAll()
       .then((res) => {
+        // const currentDate = new Date();
+        // const currentMonth = currentDate.getMonth() + 1;
+        // const filteredData = res.data.filter(
+        //   (item) => new Date(item.createdAt).getMonth() + 1 === currentMonth
+        // );
+
         setDataStored(res.data);
       })
       .catch((err) => console.log(err));
@@ -18,9 +24,7 @@ const StoredLocation = () => {
   const totalWeightPerPosition = 100;
 
   const getDataByLocation = (location) => {
-    return dataStored.filter(
-      (item) => item.location === location && item.status === 0
-    );
+  return dataStored.filter((item) => item.location === location && item.status ===0);
   };
 
   const calculateTotalWeightByLocation = (location) => {
@@ -41,14 +45,14 @@ const StoredLocation = () => {
       {
         label: "Khối lượng trong kho",
         data: totalWeightsByLocation.map((weight) => weight),
-        backgroundColor: "#b22222",
+        backgroundColor: "#FF6384",
       },
       {
         label: "Khối lượng Trống",
         data: totalWeightsByLocation.map(
           (weight) => totalWeightPerPosition - weight
         ),
-        backgroundColor: "#B8B7B7",
+        backgroundColor: "#36A2EB",
       },
     ],
   };
@@ -72,10 +76,10 @@ const StoredLocation = () => {
 
   return (
     <div>
-      <h2 className="text-center my-10 text-xl font-bold">
-      Khối Lượng Hàng trong từng vị trí trong kho
-      </h2>
       <Bar data={data} options={options} />
+      <h2 className="text-center my-10 text-xl font-bold">
+        Biểu đồ Cột Chồng Khối Lượng Hàng trong Kho
+      </h2>
     </div>
   );
 };
