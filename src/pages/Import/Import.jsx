@@ -2,12 +2,14 @@ import { jwtDecode } from "jwt-decode";
 import { useEffect, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 
 import * as storedService from "~/service/storedService";
 import ModalImport from "./ModalImport";
+import NotificationModal from "./NotificationModal/NotificationModal";
+
 function Import() {
   const navigate = useNavigate();
-
   const [searchTerm, setSearchTerm] = useState("");
   const [data, setData] = useState([]);
   const [search, setSearch] = useState([]);
@@ -68,6 +70,37 @@ function Import() {
   const endIndex = startIndex + itemsPerPage;
   const currentData = search.slice(startIndex, endIndex);
 
+  const [lightOn, setLightOn] = useState(false);
+  const [notificationModalOpen, setNotificationModalOpen] = useState(false);
+
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      fetchData();
+    }, 1000);
+
+    return () => clearInterval(interval);
+  }, []);
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get('https://us-east-1.aws.data.mongodb-api.com/app/application-0-sznak/endpoint/status');
+      const status = response.data[0].status;
+      setLightOn(status === 1);
+    } catch (error) {
+      console.error('Error fetching light status:', error);
+    }
+  };
+
+  const handleSubmit = () => {
+    if (lightOn) {
+      setShowModal(true);
+    } else {
+      setNotificationModalOpen(true);
+    }
+  };
+
+
   return (
     <div className="relative overflow-x-auto mt-10">
       <div className="w-full flex my-6">
@@ -78,10 +111,16 @@ function Import() {
             onChange={handleSearch}
             placeholder="Tìm kiếm bằng mã hoặc tên sản phẩm"
             className="w-full border text-xl rounded-md px-3 py-2 mr-10"
-          />
+          />  
+        </div>
+        <div
+          className={`w-12 h-11 mr-10 mt-3 border rounded-full ${
+            lightOn ? 'bg-green-500' : 'bg-red-500'
+          }`}
+        >
         </div>
         <button
-          onClick={() => setShowModal(true)}
+          onClick={handleSubmit}
           className="w-40 py-4 border bg-[#00827f] font-bold text-white rounded-lg text-lg"
         >
           Nhập kho
@@ -167,6 +206,10 @@ function Import() {
         showModal={showModal}
         onClose={onClose}
         fetchToken={fetchToken}
+      />
+      <NotificationModal
+        isOpen={notificationModalOpen}
+        onClose={() => setNotificationModalOpen(false)}
       />
     </div>
   );

@@ -9,13 +9,7 @@ const StoredLocation = () => {
     storedService
       .getAll()
       .then((res) => {
-        const currentDate = new Date();
-        const currentMonth = currentDate.getMonth() + 1;
-        const filteredData = res.data.filter(
-          (item) => new Date(item.createdAt).getMonth() + 1 === currentMonth
-        );
-
-        setDataStored(filteredData);
+        setDataStored(res.data);
       })
       .catch((err) => console.log(err));
   }, []);
