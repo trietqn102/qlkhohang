@@ -8,13 +8,11 @@ import ModalExport from "./ModalExport";
 
 function Export() {
   const navigate = useNavigate();
-
   const [searchTerm, setSearchTerm] = useState("");
   const [data, setData] = useState([]);
   const [search, setSearch] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [showModal, setShowModal] = useState(false);
-
   const fetchToken = async () => {
     const currentToken = localStorage.getItem("token");
     if (!currentToken) {
