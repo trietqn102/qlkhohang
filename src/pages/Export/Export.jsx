@@ -1,8 +1,7 @@
 import { jwtDecode } from "jwt-decode";
 import { useEffect, useState } from "react";
 import { IoIosArrowBack, IoIosArrowForward } from "react-icons/io";
-import { useNavigate } from "react-router-dom";
-
+import { useNavigate } from "react-router-dom"
 import * as exportService from "~/service/exportService";
 import ModalExport from "./ModalExport";
 
@@ -44,7 +43,6 @@ function Export() {
   const onClose = () => {
     setShowModal(false);
   };
-
   const itemsPerPage = 15;
 
   const handleSearch = (e) => {

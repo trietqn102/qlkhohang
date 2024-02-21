@@ -4,7 +4,6 @@ import { AuthContext } from "~/context/AuthContext";
 function Auth() {
   const [data, setData] = useState({});
   const { login, statusCode } = useContext(AuthContext);
-
   const handleSubmit = (e) => {
     e.preventDefault();
     login(data);

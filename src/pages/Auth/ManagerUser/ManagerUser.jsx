@@ -8,7 +8,6 @@ import ModalAddUser from "./ModalAddUser";
 
 function ManagerUser() {
   const navigate = useNavigate();
-
   const [searchTerm, setSearchTerm] = useState("");
   const [data, setData] = useState([]);
   const [search, setSearch] = useState([]);

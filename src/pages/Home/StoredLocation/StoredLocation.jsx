@@ -52,7 +52,7 @@ const StoredLocation = () => {
         data: totalWeightsByLocation.map(
           (weight) => totalWeightPerPosition - weight
         ),
-        backgroundColor: "##B8B7B7",
+        backgroundColor: "#B8B7B7",
       },
     ],
   };

@@ -18,7 +18,6 @@ function ModalAddUser({ showModal, onAdd, onClose }) {
       onAdd(data);
     }
   };
-
   return (
     <>
       {showModal ? (
