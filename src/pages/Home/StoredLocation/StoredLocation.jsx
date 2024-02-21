@@ -45,14 +45,14 @@ const StoredLocation = () => {
       {
         label: "Khối lượng trong kho",
         data: totalWeightsByLocation.map((weight) => weight),
-        backgroundColor: "#FF6384",
+        backgroundColor: "#b22222",
       },
       {
         label: "Khối lượng Trống",
         data: totalWeightsByLocation.map(
           (weight) => totalWeightPerPosition - weight
         ),
-        backgroundColor: "#36A2EB",
+        backgroundColor: "##B8B7B7",
       },
     ],
   };
