@@ -1,6 +1,8 @@
 import axios from "axios";
 
-export const postDoa = async ({ doa, time }) => {
+export const postDoa = async ({ doa }) => {
+  const day = new Date();
+  const tranday = day.toLocaleString();
   const data = {
     Public: {
       Input: {
@@ -9,7 +11,7 @@ export const postDoa = async ({ doa, time }) => {
           Private: "Convert DOA to PWM ",
           Public: "input and output",
         },
-        Data: { Time: time, DOA: doa },
+        Data: { Time: tranday, DOA: doa },
         Info: { author: "M.Triet", ver: "9/14/2023" },
         Path: { db: "data", Collection: "data" },
       },
