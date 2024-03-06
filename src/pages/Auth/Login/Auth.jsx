@@ -8,7 +8,6 @@ function Auth() {
     e.preventDefault();
     login(data);
   };
-
   return (
     <div className="w-full h-[100vh] flex justify-center items-center">
       <form
