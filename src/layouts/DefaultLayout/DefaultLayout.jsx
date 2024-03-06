@@ -20,7 +20,6 @@ function DefaultLayout({ children }) {
   return (
     <div>
       <Header />
-
       <div className="flex">
         {admin && token && (
           <div>
