@@ -42,7 +42,7 @@ function Import() {
 
   useEffect(() => {
     fetchToken();
-  }, []);
+  }, [navigate]);
 
   const onClose = () => {
     setShowModal(false);

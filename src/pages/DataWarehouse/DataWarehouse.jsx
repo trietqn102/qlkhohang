@@ -54,7 +54,7 @@ function DataWarehouse() {
     };
 
     fetchToken();
-  }, []);
+  }, [navigate]);
 
   const handleSearch = (e) => {
     const value = e.target.value;
@@ -140,7 +140,7 @@ function DataWarehouse() {
           placeholder="Tìm kiếm bằng mã hoặc tên sản phẩm"
           className="w-full text-xl border rounded-md px-3 py-2 mr-10"
         />
-        <ModalDelete onDelete={handleDelete} disabled={dataID.length == 0} />
+        <ModalDelete onDelete={handleDelete} disabled={dataID.length === 0} />
       </div>
       <table className="w-full md:text-xl text-sm text-left rtl:text-right text-gray-500">
         <thead className="md:text-xl text-xs text-gray-700 uppercase border">
@@ -262,7 +262,7 @@ function DataWarehouse() {
                 </td>
                 <td className="px-6 py-4">{item.location}</td>
                 <td className="px-6 py-4">
-                  {item.status == 0 ? "Trong kho" : "Đã xuất kho"}
+                  {item.status === 0 ? "Trong kho" : "Đã xuất kho"}
                 </td>
                 <td>
                   <div

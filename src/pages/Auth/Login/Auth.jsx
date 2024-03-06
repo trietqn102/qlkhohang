@@ -24,7 +24,7 @@ function Auth() {
         <div className="flex flex-col gap-4 p-6">
           {statusCode && (
             <p className="flex text-white text-xl rounded-lg bg-red-400 py-4 px-10">
-              {statusCode == 404
+              {statusCode === 404
                 ? "Tài khoản không tồn tại"
                 : "Mật khẩu không chính xác"}
             </p>

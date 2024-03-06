@@ -38,7 +38,7 @@ function Export() {
 
   useEffect(() => {
     fetchToken();
-  }, []);
+  }, [navigate]);
 
   const onClose = () => {
     setShowModal(false);
