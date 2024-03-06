@@ -15,7 +15,7 @@ function DefaultLayout({ children }) {
       const decode = jwtDecode(token);
       setAdmin(decode.role === 0);
     }
-  }, [token]);
+  }, []);
 
   return (
     <div>
