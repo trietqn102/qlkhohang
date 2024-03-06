@@ -4,19 +4,21 @@ import { AuthContext } from "~/context/AuthContext";
 function Auth() {
   const [data, setData] = useState({});
   const { login, statusCode } = useContext(AuthContext);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     login(data);
   };
+
   return (
     <div className="w-full h-[100vh] flex justify-center items-center">
       <form
         onSubmit={handleSubmit}
         className="relative flex w-1/2 xl:w-1/4  flex-col rounded-xl bg-white bg-clip-border text-gray-700 shadow-md"
       >
-        <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-cyan-600 to-cyan-400 bg-clip-border text-white shadow-lg shadow-cyan-500/40">
+        <div className="relative mx-4 -mt-6 mb-4 grid h-28 place-items-center overflow-hidden rounded-xl bg-gradient-to-tr from-teal-600 to-teal-400 bg-clip-border text-white shadow-lg shadow-teal-500/40">
           <h3 className="block font-sans text-3xl font-semibold leading-snug tracking-normal text-white antialiased">
-            Đăng nhập
+            Đăng nhập tài khoản 
           </h3>
         </div>
         <div className="flex flex-col gap-4 p-6">
@@ -61,13 +63,13 @@ function Auth() {
           <button
             data-ripple-light="true"
             type="submit"
-            className="block w-full text-[16px] py-10 select-none rounded-lg bg-gradient-to-tr from-cyan-600 to-cyan-400 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-cyan-500/20 transition-all hover:shadow-lg hover:shadow-cyan-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
+            className="block w-full text-[15px] py-10 select-none rounded-lg bg-gradient-to-tr from-teal-600 to-teal-400 px-6 text-center align-middle font-sans text-xs font-bold uppercase text-white shadow-md shadow-teal-500/20 transition-all hover:shadow-lg hover:shadow-teal-500/40 active:opacity-[0.85] disabled:pointer-events-none disabled:opacity-50 disabled:shadow-none"
           >
-            Đăng nhập
+            Login
           </button>
         </div>
       </form>
-    </div>
+    </div>  
   );
 }
 
