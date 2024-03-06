@@ -14,7 +14,6 @@ import * as storedService from "~/service/storedService";
 
 function DataWarehouse() {
   const navigate = useNavigate();
-
   const [searchTerm, setSearchTerm] = useState("");
   const [data, setData] = useState([]);
   const [search, setSearch] = useState([]);
@@ -23,7 +22,6 @@ function DataWarehouse() {
   const [modalEdit, setModalEdit] = useState(false);
   const [dataID, setDataID] = useState([]);
   const [dataEdit, setDataEdit] = useState({});
-
   const itemsPerPage = 15;
 
   const fetch = () => {
