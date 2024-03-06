@@ -32,7 +32,7 @@ function ModalImport({ showModal, onClose, fetchToken }) {
         navigate("/");
       }
     }
-  }, [navigate]);
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();

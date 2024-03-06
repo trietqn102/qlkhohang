@@ -56,4 +56,3 @@ export const editUser = async ({ data }) => {
     return error;
   }
 };
-

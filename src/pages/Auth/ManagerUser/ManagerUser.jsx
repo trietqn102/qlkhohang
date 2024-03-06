@@ -46,7 +46,7 @@ function ManagerUser() {
     };
 
     fetchToken();
-  }, [navigate]);
+  }, []);
 
   const handleSearch = (e) => {
     const value = e.target.value;

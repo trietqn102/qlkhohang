@@ -54,7 +54,7 @@ function DataWarehouse() {
     };
 
     fetchToken();
-  }, [navigate]);
+  }, []);
 
   const handleSearch = (e) => {
     const value = e.target.value;
